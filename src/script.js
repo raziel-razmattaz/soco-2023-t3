@@ -34,3 +34,14 @@ Step Seven: Clear Messages Button
 -> optional, only if time
 -> scrubs the data clean baby
 */
+//for the time display in the top-bar
+function refreshTime() {
+    let dt = new Date();
+    var hr = dt.getHours();
+    var min = dt.getMinutes();
+    min = min < 10 ? '0' + min : min;
+    const timeString = `${hr}:${min}`;
+    const timeDisplay = document.getElementById("time");
+    timeDisplay.textContent = timeString;
+    }
+  setInterval(refreshTime, 1000);

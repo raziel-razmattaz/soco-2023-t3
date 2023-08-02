@@ -2,7 +2,62 @@
     /*colour palette*/
     --canvas-bg: #f5f5f5;
     --text-main: #232323;
+    --secondary-text: #f5f5f5;
+    --secondary-bg: #000000;
+    --box-shadow: #23232376;
     --secondary-red: #e22614;
     --secondary-purple: #b5369c;
     --secondary-orange: #ff601e;
+}
+
+/*font used*/
+@font-face {
+    font-family: Arvo;
+    src: url('../data/Arvo/Arvo-Regular.ttf');
+}
+
+@font-face {
+    font-family: Arvo;
+    src: url('../data/Arvo/Arvo-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Arvo;
+    src: url('../data/Arvo/Arvo-Italic.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Arvo;
+    src: url('../data/Arvo/Arvo-BoldItalic.ttf');
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*general style*/
+
+body {
+    color: var(--text-main);
+    font-family: 'Arvo', serif;
+    font-size: 1.2rem;
+    text-align: justify;
+    background: var(--canvas-bg);
+    margin: 0%;
+}
+
+/*custom ids*/
+
+#top-bar {
+    color: var(--secondary-text);
+    background-color: var(--secondary-bg);
+    box-shadow: 0px 7px var(--box-shadow);
+    padding: 10px;
+    margin: 0px;
+}
+
+#top-bar h1,
+#top-bar p {
+    padding: 10px;
+    margin: 0px;
 }
