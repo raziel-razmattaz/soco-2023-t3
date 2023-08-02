@@ -1,20 +1,5 @@
 /*
-===HTML===
-Step One: Define Base Struct with aside and main
--> aside has the th köln logo on top, and a button that says 'Add Message'
--> aside includes small explanatory text about project
--> main is the canvas
-Step Two: Revisit when Needed
--> for javascript and everything
-===CSS===
-Step One: Define main and aside theme
--> use th köln themed colours
--> style button appropriately
--> style explanatory message
-Step Two: Think about Message design
--> style an example message
--> test different character counts etc
-===JS===
+===TODO===
 Step One: Functioning 'Add Message' Button
 -> it pops out an input window
 -> input happens
@@ -34,6 +19,20 @@ Step Seven: Clear Messages Button
 -> optional, only if time
 -> scrubs the data clean baby
 */
+
+//testing dynamic html element creation upon a buttonPress
+//the test element 
+function createMessageSender() {
+    const root = document.getElementById('info-box');
+    root.outerHTML += `
+        <div class="test-creation">
+            <h3>example</h3>
+            <p>test test test</p>
+        </div>
+    `;
+    document.getElementById('button-create').disabled = true;
+}
+
 //for the time display in the top-bar
 function refreshTime() {
     let dt = new Date();
@@ -43,5 +42,5 @@ function refreshTime() {
     const timeString = `${hr}:${min}`;
     const timeDisplay = document.getElementById("time");
     timeDisplay.textContent = timeString;
-    }
-  setInterval(refreshTime, 1000);
+}
+setInterval(refreshTime, 1000);

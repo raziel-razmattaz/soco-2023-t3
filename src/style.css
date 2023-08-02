@@ -8,6 +8,8 @@
     --secondary-red: #e22614;
     --secondary-purple: #b5369c;
     --secondary-orange: #ff601e;
+    --disabled-bg: #232323;
+    --disabled-text: #c4c4c4;
 }
 
 /*font used*/
@@ -73,6 +75,32 @@ body {
     margin: 0px;
 }
 
+#button-create {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    font-family: 'Arvo', serif;
+    font-size: 1rem;
+    padding: 8px;
+    padding-bottom: 6px;
+    border-radius: 5px;
+    border: 2px solid var(--secondary-bg);
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#button-create:hover {
+    background-color: var(--canvas-bg);
+    color: var(--text-main);
+}
+
+#button-create:disabled,
+#button-create[disabled]{
+  border: 2px solid var(--secondary-bg);
+  background-color: var(--disabled-bg);
+  color: var(--disabled-text);
+  cursor: default;
+}
+
 /*custom classes*/
 
 .info-box {
@@ -94,22 +122,11 @@ body {
     display: flex;
 }
 
-.button-create {
-    background-color: var(--secondary-bg);
-    color: var(--secondary-text);
-    font-family: 'Arvo', serif;
-    font-size: 1rem;
-    padding: 8px;
-    padding-bottom: 6px;
-    border-radius: 5px;
-    border: 2px solid var(--secondary-bg);
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.button-create:hover {
-    background-color: var(--canvas-bg);
-    color: var(--text-main);
+/*helper css while for trying out different types of html element creation*/
+.test-creation {
+    width: 32rem;
+    margin: 2rem;
+    background-color: var(--secondary-purple);
 }
 
 /*for use of google's material icons*/

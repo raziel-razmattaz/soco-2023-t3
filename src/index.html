@@ -12,7 +12,7 @@
         <header id="top-bar">
             <p><span id="time"></span></p>
         </header>
-        <div class="info-box">
+        <div id="info-box" class="info-box">
             <div class="info-box-header"></div>
             <div class="info-box-content">
                 <img src="../data/images/th-koeln-logo.png" style="width:128px;height: fit-content;">
@@ -20,7 +20,7 @@
                     <h1>TalkWall</h1>
                     <p><em>TalkWall</em> offers a way for students to connect casually across campus, fostering a more lively in-place learning atmosphere.</p>
                     <p>Simply click on the button below to write a message, sign it (optionally), then drag it wherever you want on the canvas.</p>
-                    <button class="button-create">
+                    <button onclick="createMessageSender()" id="button-create">
                         <span style="vertical-align: top; line-height: 24px;">Try it Yourself!</span>
                         <span class="material-symbols-outlined">send</span>
                     </button>
