@@ -40,8 +40,8 @@
 body {
     color: var(--text-main);
     font-family: 'Arvo', serif;
-    font-size: 1.2rem;
-    text-align: justify;
+    font-size: 0.9rem;
+    text-align: left;
     background: var(--canvas-bg);
     margin: 0%;
 }
@@ -49,6 +49,7 @@ body {
 /*custom ids*/
 
 #top-bar {
+    font-size: 1.2rem;
     color: var(--secondary-text);
     background-color: var(--secondary-bg);
     box-shadow: 0px 7px var(--box-shadow);
@@ -60,4 +61,63 @@ body {
 #top-bar p {
     padding: 10px;
     margin: 0px;
+}
+
+#info-text {
+    padding-left: 10px;
+}
+
+#info-text h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0px;
+}
+
+/*custom classes*/
+
+.info-box {
+    margin: 2rem;
+    width: 32rem;
+    border: 2px solid var(--secondary-bg);
+    background: var(--canvas-bg);
+    overflow-y: auto;
+}
+
+.info-box-header {
+    height: 1.6rem;
+    padding: 5px 22px 5px 25px;
+    background-color: var(--secondary-bg);
+}
+
+.info-box-content { 
+    padding: 15px 22px 15px 25px;
+    display: flex;
+}
+
+.button-create {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    font-family: 'Arvo', serif;
+    font-size: 1rem;
+    padding: 8px;
+    padding-bottom: 6px;
+    border-radius: 5px;
+    border: 2px solid var(--secondary-bg);
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button-create:hover {
+    background-color: var(--canvas-bg);
+    color: var(--text-main);
+}
+
+/*for use of google's material icons*/
+.material-symbols-outlined {
+    padding-left: 4.2rem;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 200,
+    'opsz' 48;
 }
