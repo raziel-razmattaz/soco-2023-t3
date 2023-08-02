@@ -1,36 +1,35 @@
-/*
-===TODO===
-Step One: Functioning 'Add Message' Button
--> it pops out an input window
--> input happens
-Step Two: Transform input window into an uneditable element
--> bg colour is one of three random th köln themed colours
-Step Three: Make it draggable
--> difficult difficult
--> maybe limit position to canvas??
-Step Four: Load and Read from LocalStorage
--> just some tests
-Step Five: Load and Read Messages from LocalStorage
--> optional name, message, colour
--> position doesn't matter yet
-Step Six: Load and Position Messages according to LocalStorage
--> good god
-Step Seven: Clear Messages Button
--> optional, only if time
--> scrubs the data clean baby
-*/
-
-//testing dynamic html element creation upon a buttonPress
-//the test element 
+//creating the message sender element
 function createMessageSender() {
     const root = document.getElementById('info-box');
     root.outerHTML += `
-        <div class="test-creation">
-            <h3>example</h3>
-            <p>test test test</p>
+        <div id="message-sender-box" class="message-sender-box">
+            <div class="message-sender-box-header"></div>
+            <div class="message-sender-box-content">
+                <p><label for="username"><strong>Username </strong></label></p>
+                <p><input type="text" id="username" name="username" placeholder="[optional]" maxlength="20" size="20" /></p>
+                <p><label for="username"><strong>Message</strong></label></p>
+                <form>
+                    <textarea maxlength="240"></textarea>
+                </form>
+                <button onclick="sendMessage()" id="button-send">
+                    <span style="vertical-align: top; line-height: 24px;">Post Message!</span>
+                    <span class="material-symbols-outlined">send</span>
+                </button>
+            </div>
         </div>
     `;
     document.getElementById('button-create').disabled = true;
+}
+
+//reading the values in from the message sender element
+//destroy sender element + spawn message + reactivate post button
+function sendMessage() {
+    //let uname = whatever.value;
+    var msg_sender = document.getElementById('message-sender-box');
+    msg_sender.remove();
+    document.getElementById('button-create').disabled = false;
+    //delete message-sender-box
+    //add message box with outerhtml + ${uname}
 }
 
 //for the time display in the top-bar

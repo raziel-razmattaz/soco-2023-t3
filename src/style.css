@@ -8,8 +8,8 @@
     --secondary-red: #e22614;
     --secondary-purple: #b5369c;
     --secondary-orange: #ff601e;
-    --disabled-bg: #232323;
-    --disabled-text: #c4c4c4;
+    --disabled-text: #232323;
+    --disabled-bg: #c4c4c4;
 }
 
 /*font used*/
@@ -42,10 +42,36 @@
 body {
     color: var(--text-main);
     font-family: 'Arvo', serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-align: left;
     background: var(--canvas-bg);
     margin: 0%;
+}
+
+input[type=text] {
+    width: 80%;
+    border: 2px solid var(--box-shadow);
+    border-radius: 4px;
+    padding: 12px;
+    font-family: 'Arvo', serif;
+    font-size: 0.8rem;
+}
+
+input[type=text]:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid var(--secondary-bg);
+}
+
+textarea {
+    width: 80%;
+    height: 80px;
+    resize: none;
+    border: 2px solid var(--box-shadow);
+    border-radius: 4px;
+    padding: 12px;
+    font-family: 'Arvo', serif;
+    font-size: 0.8rem;
 }
 
 /*custom ids*/
@@ -70,7 +96,7 @@ body {
 }
 
 #info-text h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     margin: 0px;
 }
@@ -79,7 +105,7 @@ body {
     background-color: var(--secondary-bg);
     color: var(--secondary-text);
     font-family: 'Arvo', serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 8px;
     padding-bottom: 6px;
     border-radius: 5px;
@@ -88,7 +114,22 @@ body {
     cursor: pointer;
 }
 
-#button-create:hover {
+#button-send {
+    background-color: var(--secondary-purple);
+    color: var(--secondary-text);
+    font-family: 'Arvo', serif;
+    font-size: 0.9rem;
+    margin-top: 12.8px;
+    padding: 8px;
+    padding-bottom: 6px;
+    border-radius: 5px;
+    border: 2px solid var(--secondary-purple);
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#button-create:hover,
+#button-send:hover {
     background-color: var(--canvas-bg);
     color: var(--text-main);
 }
@@ -103,8 +144,10 @@ body {
 
 /*custom classes*/
 
+/*info box == box in top left corner explaining talkwall*/
 .info-box {
     margin: 2rem;
+    margin-bottom: 1.2rem;
     width: 32rem;
     border: 2px solid var(--secondary-bg);
     background: var(--canvas-bg);
@@ -122,11 +165,24 @@ body {
     display: flex;
 }
 
-/*helper css while for trying out different types of html element creation*/
-.test-creation {
-    width: 32rem;
+/*message sender box == box that allows you to type and send messages*/
+.message-sender-box {
     margin: 2rem;
+    margin-top: 1.2rem;
+    width: 32rem;
+    border: 2px solid var(--secondary-purple);
+    background: var(--canvas-bg);
+    overflow-y: auto;
+}
+
+.message-sender-box-header {
+    height: 1.6rem;
+    padding: 5px 22px 5px 25px;
     background-color: var(--secondary-purple);
+}
+
+.message-sender-box-content { 
+    padding: 10px 22px 10px 25px;
 }
 
 /*for use of google's material icons*/
