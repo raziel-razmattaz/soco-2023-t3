@@ -24,12 +24,22 @@ function createMessageSender() {
 //reading the values in from the message sender element
 //destroy sender element + spawn message + reactivate post button
 function sendMessage() {
+    //if input field empty:
+    //let uname = "Anonymous";
+    //else:
     //let uname = whatever.value;
     var msg_sender = document.getElementById('message-sender-box');
     msg_sender.remove();
     document.getElementById('button-create').disabled = false;
-    //delete message-sender-box
-    //add message box with outerhtml + ${uname}
+    const root = document.getElementById('info-box');
+    root.outerHTML += `
+        <div class="message-box">
+            <div class="message-box-header"></div>
+            <div class="message-box-content">
+                <p><strong>Anonymous</strong></p>
+                <p>This messages is between 16 and 32 rem wide, based on content</p>
+            </div>
+        </div>`;
 }
 
 //for the time display in the top-bar
@@ -43,3 +53,5 @@ function refreshTime() {
     timeDisplay.textContent = timeString;
 }
 setInterval(refreshTime, 1000);
+
+//to make the messages draggable
