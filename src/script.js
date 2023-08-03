@@ -7,9 +7,9 @@ function createMessageSender() {
             <div class="message-sender-box-content">
                 <p><label for="username"><strong>Username </strong></label></p>
                 <p><input type="text" id="username" name="username" placeholder="[optional]" maxlength="20" size="20" /></p>
-                <p><label for="username"><strong>Message</strong></label></p>
+                <p><label for="message"><strong>Message</strong></label></p>
                 <form>
-                    <textarea maxlength="240"></textarea>
+                    <textarea id="message-content" maxlength="240"></textarea>
                 </form>
                 <button onclick="sendMessage()" id="button-send">
                     <span style="vertical-align: top; line-height: 24px;">Post Message!</span>
@@ -24,23 +24,22 @@ function createMessageSender() {
 //reading the values in from the message sender element
 //destroy sender element + spawn message + reactivate post button
 let colours = ["--secondary-purple", "--secondary-orange", "--secondary-red"];
+
 function sendMessage() {
-    //if input field empty:
-    //let uname = "Anonymous";
-    //else:
-    //let uname = whatever.value;
+    var uname = document.getElementById("username").value;
+    var message = document.getElementById("message-content").value;
     //get random colour for your message
     var colour = colours[Math.floor(Math.random() * colours.length)];
-    var msg_sender = document.getElementById('message-sender-box');
+    var msg_sender = document.getElementById("message-sender-box");
     msg_sender.remove();
-    document.getElementById('button-create').disabled = false;
+    document.getElementById("button-create").disabled = false;
     const root = document.getElementById('info-box');
     root.outerHTML += `
         <div style="border: 2px solid var(${colour});" class="message-box">
             <div style="background-color: var(${colour});" class="message-box-header"></div>
             <div class="message-box-content">
-                <p><strong>Anonymous</strong></p>
-                <p>This messages is between 16 and 32 rem wide, based on content</p>
+                <p><strong>${uname}</strong></p>
+                <p>${message}</p>
             </div>
         </div>`;
 }

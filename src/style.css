@@ -193,7 +193,8 @@ textarea {
 }
 
 /*message-box == the created, draggable message*/
-
+/*width of the box lies between 16 and 32 rem, based on content*/
+/*This improves the look of shorter messages greatly*/
 .message-box {
     background-color: var(--element-bg);
     margin: 2rem;
