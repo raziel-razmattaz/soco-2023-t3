@@ -23,18 +23,21 @@ function createMessageSender() {
 
 //reading the values in from the message sender element
 //destroy sender element + spawn message + reactivate post button
+let colours = ["--secondary-purple", "--secondary-orange", "--secondary-red"];
 function sendMessage() {
     //if input field empty:
     //let uname = "Anonymous";
     //else:
     //let uname = whatever.value;
+    //get random colour for your message
+    var colour = colours[Math.floor(Math.random() * colours.length)];
     var msg_sender = document.getElementById('message-sender-box');
     msg_sender.remove();
     document.getElementById('button-create').disabled = false;
     const root = document.getElementById('info-box');
     root.outerHTML += `
-        <div class="message-box">
-            <div class="message-box-header"></div>
+        <div style="border: 2px solid var(${colour});" class="message-box">
+            <div style="background-color: var(${colour});" class="message-box-header"></div>
             <div class="message-box-content">
                 <p><strong>Anonymous</strong></p>
                 <p>This messages is between 16 and 32 rem wide, based on content</p>

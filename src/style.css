@@ -201,14 +201,12 @@ textarea {
     min-width: 16rem;
     width: fit-content;
     max-width: var(--box-width);
-    border: 2px solid var(--secondary-red);
     overflow-y: auto;
 }
 
 .message-box-header {
     height: 1.6rem;
     padding: 5px 22px 5px 25px;
-    background-color: var(--secondary-red);
     cursor: move;
 }
 
