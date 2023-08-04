@@ -33,7 +33,18 @@ function sendMessage() {
     var msg_sender = document.getElementById("message-sender-box");
     msg_sender.remove();
     document.getElementById("button-create").disabled = false;
-    const root = document.getElementById('info-box');
+    //checks if messages already exist, and if so, append new messages at the end instead
+    //this enables "stacking" of messages in chronological order
+    const messages = document.getElementsByClassName("message-box")
+    console.log(messages);
+    if (messages.length > 0) {
+        var root;
+        for (var i = 0; i < messages.length; i++) {
+            root = messages[i];
+        }
+    } else {
+        var root = document.getElementById('info-box');
+    }
     root.outerHTML += `
         <div style="border: 2px solid var(${colour});" class="message-box">
             <div style="background-color: var(${colour});" class="message-box-header"></div>
