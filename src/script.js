@@ -26,14 +26,21 @@ function createMessageSender() {
 let colours = ["--secondary-purple", "--secondary-orange", "--secondary-red"];
 
 function sendMessage() {
-    var uname = document.getElementById("username").value;
+    //validate message + set username if left empty
     var message = document.getElementById("message-content").value;
-    //get random colour for your message
-    var colour = colours[Math.floor(Math.random() * colours.length)];
+    if (message.length == 0) { 
+        alert("Please enter a valid Message!");  	
+        return; 
+    }
+    var uname = document.getElementById("username").value;
+    if (uname.length == 0) {
+        uname = "Anonymous";
+    }
+    //reinstate the ui to the point before createSenderButton was called
     var msg_sender = document.getElementById("message-sender-box");
     msg_sender.remove();
     document.getElementById("button-create").disabled = false;
-    //checks if messages already exist, and if so, append new messages at the end instead
+    //checks if messages already exist, and if so, appends new messages at the end instead
     //this enables "stacking" of messages in chronological order
     const messages = document.getElementsByClassName("message-box")
     console.log(messages);
@@ -45,6 +52,8 @@ function sendMessage() {
     } else {
         var root = document.getElementById('info-box');
     }
+    //picks a random colour out of given array for styling
+    var colour = colours[Math.floor(Math.random() * colours.length)];
     root.outerHTML += `
         <div style="border: 2px solid var(${colour});" class="message-box">
             <div style="background-color: var(${colour});" class="message-box-header"></div>
@@ -60,7 +69,6 @@ function sendMessage() {
 	    $(drag_list[i]).draggable();
     }
 }
-
 //for the time display in the top-bar
 function refreshTime() {
     let dt = new Date();
