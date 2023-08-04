@@ -5,7 +5,7 @@ function createMessageSender() {
         <div id="message-sender-box" class="message-sender-box">
             <div class="message-sender-box-header"></div>
             <div class="message-sender-box-content">
-                <p><label for="username"><strong>Username </strong></label></p>
+                <p><label for="username"><strong>Your name</strong></label></p>
                 <p><input type="text" id="username" name="username" placeholder="[optional]" maxlength="20" size="20" /></p>
                 <p><label for="message"><strong>Message</strong></label></p>
                 <form>
@@ -41,7 +41,13 @@ function sendMessage() {
                 <p><strong>${uname}</strong></p>
                 <p>${message}</p>
             </div>
-        </div>`;
+        </div>
+    `;
+    //to make the messages draggable, the newly created element gets added to the draggable list
+    var drag_list = document.getElementsByClassName("message-box");
+    for (var i = 0; i < drag_list.length; i++) {
+	    $(drag_list[i]).draggable();
+    }
 }
 
 //for the time display in the top-bar
@@ -55,5 +61,3 @@ function refreshTime() {
     timeDisplay.textContent = timeString;
 }
 setInterval(refreshTime, 1000);
-
-//to make the messages draggable

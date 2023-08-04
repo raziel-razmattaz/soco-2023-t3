@@ -196,14 +196,21 @@ textarea {
 /*width of the box lies between 16 and 32 rem, based on content*/
 /*This improves the look of shorter messages greatly*/
 .message-box {
+    position: absolute;
     background-color: var(--element-bg);
     margin: 2rem;
     margin-bottom: 1.2rem;
     min-width: 16rem;
     width: fit-content;
     max-width: var(--box-width);
+    user-select: none;
     overflow-y: auto;
+    cursor: move;
 }
+
+.message-box.ui-draggable-dragging {
+    box-shadow: 7px 7px 0px var(--box-shadow);
+  }
 
 .message-box-header {
     height: 1.6rem;
